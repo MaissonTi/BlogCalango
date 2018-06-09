@@ -1,0 +1,41 @@
+From c4038050c9dfd47a2f11fe0fcf3ed179062261c1 Mon Sep 17 00:00:00 2001
+From: maisson <maissonsaraiva@gmail.com>
+Date: Fri, 30 Mar 2018 16:38:38 -0300
+Subject: [PATCH] Ajuste nomenclatura da "Route"
+
+---
+ resources/views/sistema/cadastro/cliente/index.blade.php | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/resources/views/sistema/cadastro/cliente/index.blade.php b/resources/views/sistema/cadastro/cliente/index.blade.php
+index 8c82e0b..270d565 100755
+--- a/resources/views/sistema/cadastro/cliente/index.blade.php
++++ b/resources/views/sistema/cadastro/cliente/index.blade.php
+@@ -15,7 +15,7 @@
+                                         <i class="material-icons">more_vert</i>
+                                     </a>
+                                     <ul class="dropdown-menu pull-right">
+-                                        <li><a href="{{URL('cadastro/cliente/create')}}">Novo Cliente</a></li>                                      
++                                        <li><a href="{{route('cliente.create')}}">Novo Cliente</a></li>                                      
+                                     </ul>
+                                 </li>
+                             </ul>
+@@ -34,13 +34,13 @@
+                                         </tr>
+                                     </thead>                                   
+                                     <tbody> 
+-                                            @foreach($clientes as $key => $cliente)                                                                                
++                                            @foreach($clientes as $cliente)                                                                                
+                                         <tr>                                                                                      
+                                             <td>{{$cliente->nome}}</td>
+                                             <td>{{$cliente->razao_social}}</td>
+                                             <td>{{$cliente->cnpj_cpf}}</td>
+                                             <td>{{$cliente->municipio_id}}</td>  
+-                                        <td><center><a href="{{URL('cadastro/cliente/'.$cliente->id .'/edit')}}" class="btn btn-xs btn-info">Edit</a></center></td>
++                                        <td><center><a href="{{route('cliente.edit', $cliente->id )}}" class="btn btn-xs btn-info">Edit</a></center></td>
+                                         </tr>
+                                         @endforeach
+                                     </tbody>
+-- 
+2.16.2.windows.1
+
